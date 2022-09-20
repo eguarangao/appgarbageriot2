@@ -8,14 +8,22 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity
-{
+import com.example.app_garbager_iot.Model.PersonModel;
+import com.example.app_garbager_iot.Retrofit.FullApis;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     Button btnSignUp;
     EditText txtEmailLogin, txtPasswordLogin;
 
     @Override
-    protected  void onCreate(Bundle loginInstance){
+    protected void onCreate(Bundle loginInstance) {
         super.onCreate(loginInstance);
         setContentView(R.layout.login);
         btnLogin = findViewById(R.id.btnLogin);
@@ -26,7 +34,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
 
@@ -34,14 +42,34 @@ public class LoginActivity extends AppCompatActivity
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
 
-
     }
 
+    private void findEmail(String email) {
+        Call<List<PersonModel>> call = FullApis.getPersonServices().findByEmail(email);
+        call.enqueue(new Callback<List<PersonModel>>() {
+            @Override
+            public void onResponse(Call<List<PersonModel>> call, Response<List<PersonModel>> response) {
+                try {
+                    if (response.isSuccessful()) {
+                        PersonModel p = (PersonModel) response.body();
+                    }
+
+                } catch (Exception e) {
+                    e.getMessage();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PersonModel>> call, Throwable t) {
+
+            }
+        });
+    }
 
 
 }
