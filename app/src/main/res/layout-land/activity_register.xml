@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/txtPaswordRegistreUser"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnSingUpRegistre"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/txtnombre"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="68dp"
+        android:ems="40"
+        android:fontFamily="sans-serif-condensed-light"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        app:layout_constraintBottom_toTopOf="@+id/txtApellido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
+
+    <EditText
+        android:id="@+id/txtEmailRegistre"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed-light"
+        android:inputType="textPersonName"
+        android:text="User Name"
+        app:layout_constraintBottom_toTopOf="@+id/txtValidarPassword"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtValidarPassword"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/txtPaswordRegistreUser"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtApellido"
+        android:layout_width="335dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed-light"
+        android:inputType="textPersonName"
+        android:text="Last Name"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmailRegistre"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnSingUpRegistre"
+        android:layout_width="207dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#00A64F"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:cornerRadius="35px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="147dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="120dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/roupuser"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/btnAtras"
+        android:layout_width="193dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="96dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Sign Up User"
+        android:textAlignment="center"
+        android:textColor="#00A64F"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnButonAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_revert"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
