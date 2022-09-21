@@ -1,5 +1,6 @@
 package com.example.app_garbager_iot.Model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -8,7 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-public class PersonModel {
+public class PersonModel implements Serializable {
     private int id;
     String firstName;
     String lastName;

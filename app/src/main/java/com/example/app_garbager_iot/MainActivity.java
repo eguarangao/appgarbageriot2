@@ -3,7 +3,10 @@ package com.example.app_garbager_iot;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.app_garbager_iot.Model.PersonModel;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -16,20 +19,48 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_garbager_iot.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.Serializable;
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-
+    NavigationView navigationView;
+    private ShapeableImageView navHeaderImageView;
+    PersonModel person;
+     TextView tvNamePersonMenu,tvEmailPersonMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = this.getIntent().getExtras();
+        this.person = (PersonModel)  bundle.getSerializable("p");
+
+
+        String namePerson = person.getFirstName();
+        String emailPerson = person.getEmail();
+        int idPerson = person.getId();
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
+        ////*Colocacion de nombres y correo en el nav
+        View vistaHeader = binding.navView.getHeaderView(0);
 
+        tvNamePersonMenu = vistaHeader.findViewById(R.id.txtnavHeaderNombre);
+        tvEmailPersonMenu = vistaHeader.findViewById(R.id.txtNavCorreo);
+
+        tvNamePersonMenu.setText("NAME: "+ namePerson.toString());
+
+        tvEmailPersonMenu.setText("EMAIL: "+emailPerson.toLowerCase(Locale.ROOT));
+
+        ///FIN*
+
+
+
+
+        setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each

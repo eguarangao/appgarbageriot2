@@ -1,16 +1,20 @@
 package com.example.app_garbager_iot;
 
+import android.app.Person;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_garbager_iot.Model.PersonModel;
 import com.example.app_garbager_iot.Retrofit.FullApis;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,11 +25,13 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     Button btnSignUp;
     EditText txtEmailLogin, txtPasswordLogin;
+    Validater validater;
 
     @Override
     protected void onCreate(Bundle loginInstance) {
         super.onCreate(loginInstance);
         setContentView(R.layout.login);
+        validater = new Validater();
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
         txtEmailLogin = findViewById(R.id.txtEmailLogin);
@@ -33,8 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+              try {
+                  accesEmailAndLogin();
+              }catch (Exception e){
+                  e.printStackTrace();
+              }
             }
         });
 
@@ -48,24 +57,44 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-
-    private void findEmail(String email) {
-        Call<List<PersonModel>> call = FullApis.getPersonServices().findByEmail(email);
+    String val;
+    private void accesEmailAndLogin() throws Exception {
+        Call<List<PersonModel>> call = FullApis.getPersonServices().getPerson();
         call.enqueue(new Callback<List<PersonModel>>() {
             @Override
             public void onResponse(Call<List<PersonModel>> call, Response<List<PersonModel>> response) {
-                try {
+
                     if (response.isSuccessful()) {
-                        PersonModel p = (PersonModel) response.body();
+                        List<PersonModel> listaPersona = response.body();
+                        for (PersonModel person :listaPersona){
+
+                            try {
+                                val  = validater.encriptar(txtPasswordLogin.getText().toString(),validater.apiKey);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            if(person.getEmail().equals(txtEmailLogin.getText().toString()) &&
+                                    person.getPassword().equals(val))
+                            {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                                intent.putExtra("p", person);
+                                startActivity(intent);
+                                finish();
+                                Toast.makeText(getApplicationContext(), "Login Successful.", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                        }
+                        Toast.makeText(getApplicationContext(), "Incorrect user or pass.", Toast.LENGTH_LONG).show();
+
                     }
 
-                } catch (Exception e) {
-                    e.getMessage();
-                }
             }
 
             @Override
             public void onFailure(Call<List<PersonModel>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Error al realizar la petición. " + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
