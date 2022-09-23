@@ -1,16 +1,16 @@
-package com.example.app_garbager_iot.ui.gallery;
+package com.example.app_garbager_iot.ui.container;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ContainerViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public ContainerViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is Container fragment");
     }
 
     public LiveData<String> getText() {

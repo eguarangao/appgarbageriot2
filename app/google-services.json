@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "964227492939",
+    "firebase_url": "https://esp32-cam-garbager-default-rtdb.firebaseio.com",
+    "project_id": "esp32-cam-garbager",
+    "storage_bucket": "esp32-cam-garbager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964227492939:android:0dd7d805722ccc558a31ce",
+        "android_client_info": {
+          "package_name": "com.example.app_garbager_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964227492939-ga5k0dljhpgbciqa74g5vtpot3lceje3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Dm87UUK0qKe_ZUTaU2u8QS0rjI0kmlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964227492939-ga5k0dljhpgbciqa74g5vtpot3lceje3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964227492939:android:925b0682ac6163d08a31ce",
+        "android_client_info": {
+          "package_name": "com.example.myapplication.ebert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964227492939-ga5k0dljhpgbciqa74g5vtpot3lceje3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6Dm87UUK0qKe_ZUTaU2u8QS0rjI0kmlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964227492939-ga5k0dljhpgbciqa74g5vtpot3lceje3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

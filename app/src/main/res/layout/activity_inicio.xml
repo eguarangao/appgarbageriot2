@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_inicio">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Smart Garbage Collector"
+        android:textColor="#019C4A"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="216dp"
+        android:layout_height="186dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSmart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/_f54791aa2b8f4c48440f307995b1aae_gree_reciclaje_basura_glass_svg__2___1___1_" />
+
+    <Button
+        android:id="@+id/btnPredecirSmart"
+        android:layout_width="223dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="258dp"
+        android:text="Predict"
+        app:icon="@drawable/ic_menu_camera"
+        app:iconPadding="5dp"
+        app:iconSize="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSmart" />
+
+    <Button
+        android:id="@+id/btnIniciarSmart"
+        android:layout_width="227dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="30dp"
+        android:text="Start"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconSize="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPredecirSmart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

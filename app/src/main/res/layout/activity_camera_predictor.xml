@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".camera_predictor">
+    tools:context=".ui.prediction.activity_camera_predictor">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgCapture"
+            android:id="@+id/imgCapturePredic"
             android:layout_width="match_parent"
             android:layout_height="636dp"
             tools:srcCompat="@tools:sample/avatars" />
@@ -58,26 +58,31 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
+            android:minHeight="48dp"
             android:text="Galeria"
-            app:icon="@drawable/ic_menu_gallery" />
+            app:icon="@drawable/ic_menu_gallery"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <Button
-            android:id="@+id/btnCamera"
+            android:id="@+id/btnCamaraPredice"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text=""
 
+            android:minHeight="48dp"
             app:icon="@drawable/ic_menu_camera"
             app:iconPadding="5dp"
-            app:iconSize="45dp" />
+            app:iconSize="45dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btnPredecir"
+            android:id="@+id/btnIniciarPrediccion"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
+            android:minHeight="48dp"
             android:text="Predecir"
-            app:icon="@android:drawable/ic_media_play" />
+            app:icon="@android:drawable/ic_media_play"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

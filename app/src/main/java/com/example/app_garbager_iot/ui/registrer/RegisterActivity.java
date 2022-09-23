@@ -1,4 +1,4 @@
-package com.example.app_garbager_iot;
+package com.example.app_garbager_iot.ui.registrer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.app_garbager_iot.Model.PersonModel;
+import com.example.app_garbager_iot.R;
 import com.example.app_garbager_iot.Retrofit.FullApis;
 import com.example.app_garbager_iot.Services.PersonServices;
+import com.example.app_garbager_iot.ui.Login.activity_login;
+import com.example.app_garbager_iot.utils.Validater;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.regex.Matcher;
@@ -41,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         flobtnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                startActivity(new Intent(RegisterActivity.this, activity_login.class));
             }
         });
 

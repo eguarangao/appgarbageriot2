@@ -1,4 +1,4 @@
-package com.example.app_garbager_iot;
+package com.example.app_garbager_iot.utils;
 
 import android.util.Base64;
 
